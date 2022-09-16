@@ -1,13 +1,19 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import { exec } from "@actions/exec";
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
+    const srcdir: string = core.getInput('srcdir')
+    const name: string = core.getInput('name')
+    core.debug(`srcdir = ${srcdir} `)
+    core.debug(`name = ${name} `)
 
     core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
+    await exec(`brew install create-dmg`);
+    core.debug(new Date().toTimeString())
+
+    core.debug(new Date().toTimeString())
+    await exec(`create-dmg ${name}.dmg ${srcdir}`);
     core.debug(new Date().toTimeString())
 
     core.setOutput('time', new Date().toTimeString())
