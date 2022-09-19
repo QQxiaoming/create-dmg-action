@@ -20,11 +20,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          mkdir test
+          mkdir test.app
       - uses: ./
         with:
           name: test
-          srcdir: ./test
+          srcdir: ./test.app
+      - uses: actions/upload-artifact@v2.2.4
+        with:
+          name: test
+          path: |
+            ./test.dmg
       - run: |
           sudo hdiutil attach ./test.dmg
-
