@@ -1,6 +1,6 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'create-dmg-action'
+description: 'Create dmg for macos'
+author: 'QQxiaoming(2014500726@smail.xtu.edu.cn)'
 inputs:
   srcdir:
     description: 'source dir'
