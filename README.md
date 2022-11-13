@@ -15,7 +15,7 @@ Build fancy DMGs on your Github Actions workflows with just one simple action.
 ## Example usage
 
 ```
-uses: QQxiaoming/create-dmg-action@v1.0
+uses: QQxiaoming/create-dmg-action@v0.0.2
 with:
   name: 'target'
   srcdir: 'srcdir'
