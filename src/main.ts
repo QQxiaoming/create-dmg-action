@@ -341,7 +341,7 @@ F2D70000000049454E44AE42608200", "hex");
     fs.writeFileSync('installer_background.png', b1);
 
     core.debug(new Date().toTimeString())
-    await exec(`create-dmg --volname "${name}" --background "installer_background.png" --window-pos 200 120 --window-size 800 450 --icon-size 100 --app-drop-link 600 185 ${name}.dmg ${srcdir}`);
+    await exec(`create-dmg --volname "${name}" --background "installer_background.png" --window-pos 200 120 --window-size 800 450 --icon-size 100 --icon ${name}.app 200 185 --app-drop-link 600 185 ${name}.dmg ${srcdir}`);
     core.debug(new Date().toTimeString())
 
     core.setOutput('time', new Date().toTimeString())
